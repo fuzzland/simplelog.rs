@@ -15,7 +15,8 @@ use log::{set_boxed_logger, set_max_level, LevelFilter, Log, Metadata, Record, S
 /// The purpose is to allow multiple Loggers to be set globally
 pub struct CombinedLogger {
     level: LevelFilter,
-    logger: Vec<Box<dyn SharedLogger>>,
+    /// Vector of all used loggers
+    pub logger: Vec<Box<dyn SharedLogger>>,
 }
 
 impl CombinedLogger {
